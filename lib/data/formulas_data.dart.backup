@@ -1,0 +1,1228 @@
+import '../models/formula.dart';
+import '../models/formula_example.dart';
+
+class FormulasData {
+  static final List<Formula> mathematicsFormulas = [
+    // Квадратное уравнение
+    Formula(
+      id: 'm1',
+      title: 'Квадратное уравнение',
+      latex: r'x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}',
+      description: 'Решение квадратного уравнения ax² + bx + c = 0. Дискриминант D = b² - 4ac',
+      category: FormulaCategory.mathematics,
+      examples: [
+        FormulaExample(
+          problem: 'Решить уравнение x² - 5x + 6 = 0',
+          given: 'a = 1, b = -5, c = 6',
+          solution: 'D = (-5)² - 4(1)(6) = 25 - 24 = 1\nx₁ = (5 + 1)/2 = 3\nx₂ = (5 - 1)/2 = 2',
+          answer: 'x₁ = 3, x₂ = 2',
+        ),
+        FormulaExample(
+          problem: 'Решить уравнение 2x² + 3x - 2 = 0',
+          given: 'a = 2, b = 3, c = -2',
+          solution: 'D = 3² - 4(2)(-2) = 9 + 16 = 25\nx₁ = (-3 + 5)/4 = 0.5\nx₂ = (-3 - 5)/4 = -2',
+          answer: 'x₁ = 0.5, x₂ = -2',
+        ),
+        FormulaExample(
+          problem: 'Решить уравнение x² - 6x + 9 = 0',
+          given: 'a = 1, b = -6, c = 9',
+          solution: 'D = 36 - 36 = 0\nx = 6/2 = 3',
+          answer: 'x = 3 (один корень)',
+        ),
+        FormulaExample(
+          problem: 'Решить уравнение 3x² - 2x - 1 = 0',
+          given: 'a = 3, b = -2, c = -1',
+          solution: 'D = 4 + 12 = 16\nx₁ = (2 + 4)/6 = 1\nx₂ = (2 - 4)/6 = -1/3',
+          answer: 'x₁ = 1, x₂ = -1/3',
+        ),
+      ],
+    ),
+    
+    // Теорема Виета
+    Formula(
+      id: 'm2',
+      title: 'Теорема Виета',
+      latex: r'x_1 + x_2 = -p,\quad x_1 \cdot x_2 = q',
+      description: 'Для уравнения x² + px + q = 0: сумма корней равна -p, произведение равно q',
+      category: FormulaCategory.mathematics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти сумму и произведение корней x² - 7x + 10 = 0',
+          given: 'p = -7, q = 10',
+          solution: 'x₁ + x₂ = -(-7) = 7\nx₁ · x₂ = 10',
+          answer: 'сумма = 7, произведение = 10',
+        ),
+        FormulaExample(
+          problem: 'Составить уравнение с корнями 3 и 5',
+          given: 'x₁ = 3, x₂ = 5',
+          solution: 'x₁ + x₂ = 8, x₁ · x₂ = 15\nУравнение: x² - 8x + 15 = 0',
+          answer: 'x² - 8x + 15 = 0',
+        ),
+        FormulaExample(
+          problem: 'Найти второй корень, если x₁ = 2 в уравнении x² - 6x + 8 = 0',
+          given: 'x₁ = 2, p = -6, q = 8',
+          solution: 'x₁ + x₂ = 6, значит x₂ = 6 - 2 = 4\nПроверка: 2 · 4 = 8 ✓',
+          answer: 'x₂ = 4',
+        ),
+        FormulaExample(
+          problem: 'Составить уравнение с корнями -2 и 6',
+          given: 'x₁ = -2, x₂ = 6',
+          solution: 'x₁ + x₂ = 4, x₁ · x₂ = -12\nУравнение: x² - 4x - 12 = 0',
+          answer: 'x² - 4x - 12 = 0',
+        ),
+      ],
+    ),
+    
+    // Квадрат суммы
+    Formula(
+      id: 'm3',
+      title: 'Квадрат суммы',
+      latex: r'(a + b)^2 = a^2 + 2ab + b^2',
+      description: 'Формула сокращённого умножения: квадрат суммы двух чисел',
+      category: FormulaCategory.mathematics,
+      examples: [
+        FormulaExample(
+          problem: 'Раскрыть (x + 3)²',
+          given: 'a = x, b = 3',
+          solution: '(x + 3)² = x² + 2·x·3 + 9\n= x² + 6x + 9',
+          answer: 'x² + 6x + 9',
+        ),
+        FormulaExample(
+          problem: 'Раскрыть (2y + 5)²',
+          given: 'a = 2y, b = 5',
+          solution: '(2y + 5)² = 4y² + 2·2y·5 + 25\n= 4y² + 20y + 25',
+          answer: '4y² + 20y + 25',
+        ),
+        FormulaExample(
+          problem: 'Вычислить 103²',
+          given: '103 = 100 + 3',
+          solution: '103² = (100 + 3)² = 10000 + 600 + 9\n= 10609',
+          answer: '10609',
+        ),
+      ],
+    ),
+    
+    // Квадрат разности
+    Formula(
+      id: 'm4',
+      title: 'Квадрат разности',
+      latex: r'(a - b)^2 = a^2 - 2ab + b^2',
+      description: 'Формула сокращённого умножения: квадрат разности двух чисел',
+      category: FormulaCategory.mathematics,
+      examples: [
+        FormulaExample(
+          problem: 'Раскрыть (x - 4)²',
+          given: 'a = x, b = 4',
+          solution: '(x - 4)² = x² - 2·x·4 + 16\n= x² - 8x + 16',
+          answer: 'x² - 8x + 16',
+        ),
+        FormulaExample(
+          problem: 'Вычислить 98²',
+          given: '98 = 100 - 2',
+          solution: '98² = (100 - 2)² = 10000 - 400 + 4\n= 9604',
+          answer: '9604',
+        ),
+        FormulaExample(
+          problem: 'Раскрыть (3a - 2b)²',
+          given: 'a = 3a, b = 2b',
+          solution: '(3a - 2b)² = 9a² - 2·3a·2b + 4b²\n= 9a² - 12ab + 4b²',
+          answer: '9a² - 12ab + 4b²',
+        ),
+      ],
+    ),
+    
+    // Разность квадратов
+    Formula(
+      id: 'm5',
+      title: 'Разность квадратов',
+      latex: r'a^2 - b^2 = (a - b)(a + b)',
+      description: 'Формула сокращённого умножения: разность квадратов',
+      category: FormulaCategory.mathematics,
+      examples: [
+        FormulaExample(
+          problem: 'Разложить x² - 25',
+          given: 'a = x, b = 5',
+          solution: 'x² - 25 = x² - 5²\n= (x - 5)(x + 5)',
+          answer: '(x - 5)(x + 5)',
+        ),
+        FormulaExample(
+          problem: 'Вычислить 47² - 43²',
+          given: 'a = 47, b = 43',
+          solution: '47² - 43² = (47 - 43)(47 + 43)\n= 4 · 90 = 360',
+          answer: '360',
+        ),
+        FormulaExample(
+          problem: 'Упростить (a + b)² - (a - b)²',
+          given: 'Два квадрата',
+          solution: '= [(a + b) - (a - b)][(a + b) + (a - b)]\n= 2b · 2a = 4ab',
+          answer: '4ab',
+        ),
+      ],
+    ),
+    
+    // Арифметическая прогрессия
+    Formula(
+      id: 'm6',
+      title: 'Арифметическая прогрессия',
+      latex: r'a_n = a_1 + (n - 1)d',
+      description: 'n-й член арифметической прогрессии, где d - разность',
+      category: FormulaCategory.mathematics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти 10-й член прогрессии 2, 5, 8, ...',
+          given: 'a₁ = 2, d = 3, n = 10',
+          solution: 'a₁₀ = 2 + (10 - 1) · 3\n= 2 + 9 · 3 = 2 + 27 = 29',
+          answer: 'a₁₀ = 29',
+        ),
+        FormulaExample(
+          problem: 'Найти разность, если a₁ = 5 и a₅ = 21',
+          given: 'a₁ = 5, a₅ = 21, n = 5',
+          solution: '21 = 5 + (5 - 1) · d\n21 = 5 + 4d\n16 = 4d\nd = 4',
+          answer: 'd = 4',
+        ),
+        FormulaExample(
+          problem: 'Найти 7-й член прогрессии -3, 1, 5, ...',
+          given: 'a₁ = -3, d = 4, n = 7',
+          solution: 'a₇ = -3 + (7 - 1) · 4\n= -3 + 24 = 21',
+          answer: 'a₇ = 21',
+        ),
+      ],
+    ),
+    
+    // Сумма арифметической прогрессии
+    Formula(
+      id: 'm7',
+      title: 'Сумма арифметической прогрессии',
+      latex: r'S_n = \frac{n(a_1 + a_n)}{2}',
+      description: 'Сумма первых n членов арифметической прогрессии',
+      category: FormulaCategory.mathematics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти сумму первых 20 членов: 1, 3, 5, ...',
+          given: 'a₁ = 1, d = 2, n = 20',
+          solution: 'a₂₀ = 1 + 19 · 2 = 39\nS₂₀ = 20(1 + 39)/2 = 20 · 40/2 = 400',
+          answer: 'S₂₀ = 400',
+        ),
+        FormulaExample(
+          problem: 'Найти сумму первых 10 членов: 2, 5, 8, ...',
+          given: 'a₁ = 2, d = 3, n = 10',
+          solution: 'a₁₀ = 2 + 9 · 3 = 29\nS₁₀ = 10(2 + 29)/2 = 155',
+          answer: 'S₁₀ = 155',
+        ),
+        FormulaExample(
+          problem: 'Найти количество членов, если a₁ = 3, d = 2, Sₙ = 63',
+          given: 'a₁ = 3, d = 2, Sₙ = 63',
+          solution: 'aₙ = 3 + (n-1)·2\n63 = n(3 + 3 + 2n - 2)/2\n126 = n(4 + 2n)\nn² + 2n - 63 = 0\nn = 7',
+          answer: 'n = 7',
+        ),
+      ],
+    ),
+    
+    // Геометрическая прогрессия
+    Formula(
+      id: 'm8',
+      title: 'Геометрическая прогрессия',
+      latex: r'b_n = b_1 \cdot q^{n-1}',
+      description: 'n-й член геометрической прогрессии, где q - знаменатель',
+      category: FormulaCategory.mathematics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти 6-й член прогрессии 2, 6, 18, ...',
+          given: 'b₁ = 2, q = 3, n = 6',
+          solution: 'b₆ = 2 · 3⁵ = 2 · 243 = 486',
+          answer: 'b₆ = 486',
+        ),
+        FormulaExample(
+          problem: 'Найти знаменатель, если b₁ = 3 и b₄ = 81',
+          given: 'b₁ = 3, b₄ = 81, n = 4',
+          solution: '81 = 3 · q³\nq³ = 27\nq = 3',
+          answer: 'q = 3',
+        ),
+        FormulaExample(
+          problem: 'Найти 5-й член прогрессии 1, 2, 4, ...',
+          given: 'b₁ = 1, q = 2, n = 5',
+          solution: 'b₅ = 1 · 2⁴ = 16',
+          answer: 'b₅ = 16',
+        ),
+      ],
+    ),
+    
+    // Сумма геометрической прогрессии
+    Formula(
+      id: 'm9',
+      title: 'Сумма геометрической прогрессии',
+      latex: r'S_n = \frac{b_1(q^n - 1)}{q - 1}',
+      description: 'Сумма первых n членов геометрической прогрессии при q ≠ 1',
+      category: FormulaCategory.mathematics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти сумму первых 5 членов: 1, 2, 4, ...',
+          given: 'b₁ = 1, q = 2, n = 5',
+          solution: 'S₅ = 1(2⁵ - 1)/(2 - 1)\n= (32 - 1)/1 = 31',
+          answer: 'S₅ = 31',
+        ),
+        FormulaExample(
+          problem: 'Найти сумму бесконечной прогрессии 8, 4, 2, ...',
+          given: 'b₁ = 8, q = 0.5',
+          solution: 'S = b₁/(1 - q) = 8/(1 - 0.5)\n= 8/0.5 = 16',
+          answer: 'S = 16',
+        ),
+        FormulaExample(
+          problem: 'Найти сумму первых 4 членов: 3, 6, 12, ...',
+          given: 'b₁ = 3, q = 2, n = 4',
+          solution: 'S₄ = 3(2⁴ - 1)/(2 - 1)\n= 3 · 15 = 45',
+          answer: 'S₄ = 45',
+        ),
+      ],
+    ),
+    
+    // Теорема Пифагора
+    Formula(
+      id: 'm10',
+      title: 'Теорема Пифагора',
+      latex: r'a^2 + b^2 = c^2',
+      description: 'В прямоугольном треугольнике квадрат гипотенузы равен сумме квадратов катетов',
+      category: FormulaCategory.mathematics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти гипотенузу, если катеты 3 и 4 см',
+          given: 'a = 3 см, b = 4 см',
+          solution: 'c² = 3² + 4² = 9 + 16 = 25\nc = √25 = 5 см',
+          answer: 'c = 5 см',
+        ),
+        FormulaExample(
+          problem: 'Найти катет, если c = 13 см, a = 5 см',
+          given: 'c = 13 см, a = 5 см',
+          solution: 'b² = 13² - 5² = 169 - 25 = 144\nb = √144 = 12 см',
+          answer: 'b = 12 см',
+        ),
+        FormulaExample(
+          problem: 'Проверить, является ли треугольник со сторонами 8, 15, 17 прямоугольным',
+          given: 'a = 8, b = 15, c = 17',
+          solution: '8² + 15² = 64 + 225 = 289\n17² = 289\n289 = 289 ✓',
+          answer: 'Да, является',
+        ),
+        FormulaExample(
+          problem: 'Найти диагональ прямоугольника 6×8 см',
+          given: 'a = 6 см, b = 8 см',
+          solution: 'd² = 6² + 8² = 36 + 64 = 100\nd = 10 см',
+          answer: 'd = 10 см',
+        ),
+      ],
+    ),
+    
+    // Площадь треугольника
+    Formula(
+      id: 'm11',
+      title: 'Площадь треугольника',
+      latex: r'S = \frac{1}{2} \cdot a \cdot h',
+      description: 'Площадь треугольника через основание и высоту',
+      category: FormulaCategory.mathematics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти площадь треугольника с основанием 8 см и высотой 5 см',
+          given: 'a = 8 см, h = 5 см',
+          solution: 'S = (1/2) · 8 · 5 = 20 см²',
+          answer: 'S = 20 см²',
+        ),
+        FormulaExample(
+          problem: 'Найти высоту, если S = 24 см² и a = 6 см',
+          given: 'S = 24 см², a = 6 см',
+          solution: '24 = (1/2) · 6 · h\n24 = 3h\nh = 8 см',
+          answer: 'h = 8 см',
+        ),
+        FormulaExample(
+          problem: 'Найти площадь прямоугольного треугольника с катетами 6 и 8 см',
+          given: 'a = 6 см (катет = высота), b = 8 см (основание)',
+          solution: 'S = (1/2) · 8 · 6 = 24 см²',
+          answer: 'S = 24 см²',
+        ),
+      ],
+    ),
+    
+    // Площадь круга
+    Formula(
+      id: 'm12',
+      title: 'Площадь круга',
+      latex: r'S = \pi r^2',
+      description: 'Площадь круга с радиусом r',
+      category: FormulaCategory.mathematics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти площадь круга с радиусом 5 см',
+          given: 'r = 5 см, π ≈ 3.14',
+          solution: 'S = π · 5² = π · 25 ≈ 78.5 см²',
+          answer: 'S ≈ 78.5 см²',
+        ),
+        FormulaExample(
+          problem: 'Найти радиус, если площадь 100π см²',
+          given: 'S = 100π см²',
+          solution: 'πr² = 100π\nr² = 100\nr = 10 см',
+          answer: 'r = 10 см',
+        ),
+        FormulaExample(
+          problem: 'Найти площадь кольца с внешним радиусом 5 см и внутренним 3 см',
+          given: 'R = 5 см, r = 3 см',
+          solution: 'S = π(R² - r²) = π(25 - 9)\n= 16π ≈ 50.3 см²',
+          answer: 'S ≈ 50.3 см²',
+        ),
+      ],
+    ),
+    
+    // Длина окружности
+    Formula(
+      id: 'm13',
+      title: 'Длина окружности',
+      latex: r'C = 2\pi r = \pi d',
+      description: 'Длина окружности с радиусом r или диаметром d',
+      category: FormulaCategory.mathematics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти длину окружности с диаметром 10 см',
+          given: 'd = 10 см, π ≈ 3.14',
+          solution: 'C = π · 10 ≈ 31.4 см',
+          answer: 'C ≈ 31.4 см',
+        ),
+        FormulaExample(
+          problem: 'Найти радиус, если длина окружности 20π см',
+          given: 'C = 20π см',
+          solution: '2πr = 20π\nr = 10 см',
+          answer: 'r = 10 см',
+        ),
+        FormulaExample(
+          problem: 'Найти длину окружности с радиусом 7 см',
+          given: 'r = 7 см',
+          solution: 'C = 2π · 7 = 14π ≈ 43.96 см',
+          answer: 'C ≈ 44 см',
+        ),
+      ],
+    ),
+    
+    // Объем параллелепипеда
+    Formula(
+      id: 'm14',
+      title: 'Объём параллелепипеда',
+      latex: r'V = a \cdot b \cdot c',
+      description: 'Объём прямоугольного параллелепипеда',
+      category: FormulaCategory.mathematics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти объём параллелепипеда 3×4×5 см',
+          given: 'a = 3 см, b = 4 см, c = 5 см',
+          solution: 'V = 3 · 4 · 5 = 60 см³',
+          answer: 'V = 60 см³',
+        ),
+        FormulaExample(
+          problem: 'Найти высоту, если V = 120 см³ и основание 4×6 см',
+          given: 'V = 120 см³, a = 4 см, b = 6 см',
+          solution: '120 = 4 · 6 · h\n120 = 24h\nh = 5 см',
+          answer: 'h = 5 см',
+        ),
+        FormulaExample(
+          problem: 'Найти объём куба с ребром 4 см',
+          given: 'a = b = c = 4 см',
+          solution: 'V = 4 · 4 · 4 = 64 см³',
+          answer: 'V = 64 см³',
+        ),
+      ],
+    ),
+    
+    // Объем цилиндра
+    Formula(
+      id: 'm15',
+      title: 'Объём цилиндра',
+      latex: r'V = \pi r^2 h',
+      description: 'Объём цилиндра с радиусом основания r и высотой h',
+      category: FormulaCategory.mathematics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти объём цилиндра с r = 3 см и h = 10 см',
+          given: 'r = 3 см, h = 10 см',
+          solution: 'V = π · 3² · 10 = 90π ≈ 282.7 см³',
+          answer: 'V ≈ 282.7 см³',
+        ),
+        FormulaExample(
+          problem: 'Найти высоту, если V = 100π см³ и r = 5 см',
+          given: 'V = 100π см³, r = 5 см',
+          solution: '100π = π · 25 · h\nh = 100π / 25π = 4 см',
+          answer: 'h = 4 см',
+        ),
+        FormulaExample(
+          problem: 'Найти объём цилиндра с r = 2 см и h = 8 см',
+          given: 'r = 2 см, h = 8 см',
+          solution: 'V = π · 4 · 8 = 32π ≈ 100.5 см³',
+          answer: 'V ≈ 100.5 см³',
+        ),
+      ],
+    ),
+    
+    // Объем сферы
+    Formula(
+      id: 'm16',
+      title: 'Объём сферы',
+      latex: r'V = \frac{4}{3}\pi r^3',
+      description: 'Объём сферы с радиусом r',
+      category: FormulaCategory.mathematics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти объём сферы с радиусом 3 см',
+          given: 'r = 3 см',
+          solution: 'V = (4/3)π · 27 = 36π ≈ 113.1 см³',
+          answer: 'V ≈ 113.1 см³',
+        ),
+        FormulaExample(
+          problem: 'Во сколько раз увеличится объём, если радиус увеличить в 2 раза?',
+          given: 'r₂ = 2r₁',
+          solution: 'V₁ = (4/3)πr³\nV₂ = (4/3)π(2r)³ = 8 · (4/3)πr³\nУвеличится в 8 раз',
+          answer: 'В 8 раз',
+        ),
+        FormulaExample(
+          problem: 'Найти радиус сферы объёмом 288π см³',
+          given: 'V = 288π см³',
+          solution: '(4/3)πr³ = 288π\nr³ = 216\nr = 6 см',
+          answer: 'r = 6 см',
+        ),
+      ],
+    ),
+    
+    // Основное тригонометрическое тождество
+    Formula(
+      id: 'm17',
+      title: 'Основное тригонометрическое тождество',
+      latex: r'\sin^2\alpha + \cos^2\alpha = 1',
+      description: 'Основное тригонометрическое тождество',
+      category: FormulaCategory.mathematics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти cos α, если sin α = 0.6',
+          given: 'sin α = 0.6',
+          solution: 'cos²α = 1 - sin²α = 1 - 0.36 = 0.64\ncos α = ±0.8',
+          answer: 'cos α = ±0.8',
+        ),
+        FormulaExample(
+          problem: 'Найти sin α, если cos α = 5/13',
+          given: 'cos α = 5/13',
+          solution: 'sin²α = 1 - (5/13)² = 1 - 25/169\n= 144/169\nsin α = 12/13',
+          answer: 'sin α = 12/13',
+        ),
+        FormulaExample(
+          problem: 'Проверить тождество для α = 30°',
+          given: 'sin 30° = 1/2, cos 30° = √3/2',
+          solution: '(1/2)² + (√3/2)² = 1/4 + 3/4 = 1 ✓',
+          answer: 'Верно',
+        ),
+      ],
+    ),
+    
+    // Синус двойного угла
+    Formula(
+      id: 'm18',
+      title: 'Синус двойного угла',
+      latex: r'\sin(2\alpha) = 2\sin\alpha\cos\alpha',
+      description: 'Формула синуса двойного угла',
+      category: FormulaCategory.mathematics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти sin 2α, если sin α = 3/5 и cos α = 4/5',
+          given: 'sin α = 3/5, cos α = 4/5',
+          solution: 'sin 2α = 2 · (3/5) · (4/5)\n= 2 · 12/25 = 24/25',
+          answer: 'sin 2α = 24/25',
+        ),
+        FormulaExample(
+          problem: 'Вычислить sin 60°, зная sin 30° = 0.5',
+          given: 'sin 30° = 0.5, cos 30° = √3/2',
+          solution: 'sin 60° = 2 · 0.5 · (√3/2)\n= √3/2',
+          answer: 'sin 60° = √3/2',
+        ),
+        FormulaExample(
+          problem: 'Упростить 2 sin α cos α',
+          given: 'Выражение 2 sin α cos α',
+          solution: 'По формуле: 2 sin α cos α = sin 2α',
+          answer: 'sin 2α',
+        ),
+      ],
+    ),
+    
+    // Косинус двойного угла
+    Formula(
+      id: 'm19',
+      title: 'Косинус двойного угла',
+      latex: r'\cos(2\alpha) = \cos^2\alpha - \sin^2\alpha',
+      description: 'Формула косинуса двойного угла',
+      category: FormulaCategory.mathematics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти cos 2α, если cos α = 0.6',
+          given: 'cos α = 0.6',
+          solution: 'cos 2α = 2cos²α - 1\n= 2 · 0.36 - 1 = 0.72 - 1 = -0.28',
+          answer: 'cos 2α = -0.28',
+        ),
+        FormulaExample(
+          problem: 'Найти cos 2α, если sin α = 0.8',
+          given: 'sin α = 0.8',
+          solution: 'cos 2α = 1 - 2sin²α\n= 1 - 2 · 0.64 = 1 - 1.28 = -0.28',
+          answer: 'cos 2α = -0.28',
+        ),
+        FormulaExample(
+          problem: 'Найти cos 2α, если sin α = 3/5 и cos α = 4/5',
+          given: 'sin α = 3/5, cos α = 4/5',
+          solution: 'cos 2α = (4/5)² - (3/5)²\n= 16/25 - 9/25 = 7/25',
+          answer: 'cos 2α = 7/25',
+        ),
+      ],
+    ),
+    
+    // Тангенс
+    Formula(
+      id: 'm20',
+      title: 'Тангенс угла',
+      latex: r'\tan\alpha = \frac{\sin\alpha}{\cos\alpha}',
+      description: 'Тангенс угла через синус и косинус',
+      category: FormulaCategory.mathematics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти tg α, если sin α = 3/5 и cos α = 4/5',
+          given: 'sin α = 3/5, cos α = 4/5',
+          solution: 'tg α = (3/5) / (4/5) = 3/4 = 0.75',
+          answer: 'tg α = 0.75',
+        ),
+        FormulaExample(
+          problem: 'Найти tg α, если sin α = 0.6 и cos α = 0.8',
+          given: 'sin α = 0.6, cos α = 0.8',
+          solution: 'tg α = 0.6 / 0.8 = 0.75',
+          answer: 'tg α = 0.75',
+        ),
+        FormulaExample(
+          problem: 'Найти tg 45°',
+          given: 'sin 45° = cos 45° = √2/2',
+          solution: 'tg 45° = (√2/2) / (√2/2) = 1',
+          answer: 'tg 45° = 1',
+        ),
+      ],
+    ),
+  ];
+
+  static final List<Formula> physicsFormulas = [
+    // Скорость
+    Formula(
+      id: 'p1',
+      title: 'Скорость',
+      latex: r'v = \frac{s}{t}',
+      description: 'Скорость равномерного движения',
+      category: FormulaCategory.physics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти скорость, если пройдено 120 км за 2 часа',
+          given: 's = 120 км, t = 2 ч',
+          solution: 'v = 120 / 2 = 60 км/ч',
+          answer: 'v = 60 км/ч',
+        ),
+        FormulaExample(
+          problem: 'Найти время, если v = 80 км/ч и s = 240 км',
+          given: 'v = 80 км/ч, s = 240 км',
+          solution: 't = s / v = 240 / 80 = 3 часа',
+          answer: 't = 3 часа',
+        ),
+        FormulaExample(
+          problem: 'Найти расстояние, если v = 15 м/с и t = 10 с',
+          given: 'v = 15 м/с, t = 10 с',
+          solution: 's = v · t = 15 · 10 = 150 м',
+          answer: 's = 150 м',
+        ),
+        FormulaExample(
+          problem: 'Перевести 72 км/ч в м/с',
+          given: 'v = 72 км/ч',
+          solution: '72 км/ч = 72 · 1000 / 3600 = 20 м/с',
+          answer: 'v = 20 м/с',
+        ),
+      ],
+    ),
+    
+    // Ускорение
+    Formula(
+      id: 'p2',
+      title: 'Ускорение',
+      latex: r'a = \frac{v - v_0}{t}',
+      description: 'Ускорение при равноускоренном движении',
+      category: FormulaCategory.physics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти ускорение, если v₀ = 10 м/с, v = 30 м/с, t = 4 с',
+          given: 'v₀ = 10 м/с, v = 30 м/с, t = 4 с',
+          solution: 'a = (30 - 10) / 4 = 20 / 4 = 5 м/с²',
+          answer: 'a = 5 м/с²',
+        ),
+        FormulaExample(
+          problem: 'Найти конечную скорость, если v₀ = 5 м/с, a = 3 м/с², t = 4 с',
+          given: 'v₀ = 5 м/с, a = 3 м/с², t = 4 с',
+          solution: 'v = v₀ + at = 5 + 3 · 4 = 17 м/с',
+          answer: 'v = 17 м/с',
+        ),
+        FormulaExample(
+          problem: 'Найти время разгона от 0 до 20 м/с с ускорением 4 м/с²',
+          given: 'v₀ = 0, v = 20 м/с, a = 4 м/с²',
+          solution: 't = (v - v₀) / a = 20 / 4 = 5 с',
+          answer: 't = 5 с',
+        ),
+      ],
+    ),
+    
+    // Путь при равноускоренном движении
+    Formula(
+      id: 'p3',
+      title: 'Путь при равноускоренном движении',
+      latex: r's = v_0 t + \frac{at^2}{2}',
+      description: 'Перемещение при равноускоренном движении',
+      category: FormulaCategory.physics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти путь, если v₀ = 0, a = 2 м/с², t = 5 с',
+          given: 'v₀ = 0, a = 2 м/с², t = 5 с',
+          solution: 's = 0 + (2 · 25)/2 = 25 м',
+          answer: 's = 25 м',
+        ),
+        FormulaExample(
+          problem: 'Найти путь, если v₀ = 10 м/с, a = 2 м/с², t = 4 с',
+          given: 'v₀ = 10 м/с, a = 2 м/с², t = 4 с',
+          solution: 's = 10 · 4 + (2 · 16)/2 = 40 + 16 = 56 м',
+          answer: 's = 56 м',
+        ),
+        FormulaExample(
+          problem: 'Найти путь торможения, если v₀ = 20 м/с, a = -4 м/с², t = 5 с',
+          given: 'v₀ = 20 м/с, a = -4 м/с², t = 5 с',
+          solution: 's = 20 · 5 + (-4 · 25)/2 = 100 - 50 = 50 м',
+          answer: 's = 50 м',
+        ),
+      ],
+    ),
+    
+    // Второй закон Ньютона
+    Formula(
+      id: 'p4',
+      title: 'Второй закон Ньютона',
+      latex: r'F = ma',
+      description: 'Сила равна произведению массы на ускорение',
+      category: FormulaCategory.physics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти силу для тела массой 5 кг с ускорением 2 м/с²',
+          given: 'm = 5 кг, a = 2 м/с²',
+          solution: 'F = 5 · 2 = 10 Н',
+          answer: 'F = 10 Н',
+        ),
+        FormulaExample(
+          problem: 'Найти массу, если F = 24 Н и a = 3 м/с²',
+          given: 'F = 24 Н, a = 3 м/с²',
+          solution: 'm = F / a = 24 / 3 = 8 кг',
+          answer: 'm = 8 кг',
+        ),
+        FormulaExample(
+          problem: 'Найти ускорение тела массой 10 кг под действием силы 50 Н',
+          given: 'm = 10 кг, F = 50 Н',
+          solution: 'a = F / m = 50 / 10 = 5 м/с²',
+          answer: 'a = 5 м/с²',
+        ),
+        FormulaExample(
+          problem: 'Какая сила нужна для остановки автомобиля массой 1000 кг с замедлением 5 м/с²?',
+          given: 'm = 1000 кг, a = 5 м/с²',
+          solution: 'F = 1000 · 5 = 5000 Н = 5 кН',
+          answer: 'F = 5 кН',
+        ),
+      ],
+    ),
+    
+    // Сила тяжести
+    Formula(
+      id: 'p5',
+      title: 'Сила тяжести',
+      latex: r'F = mg',
+      description: 'Сила тяжести, где g = 10 м/с² (или 9.8 м/с²)',
+      category: FormulaCategory.physics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти силу тяжести для тела массой 7 кг',
+          given: 'm = 7 кг, g = 10 м/с²',
+          solution: 'F = 7 · 10 = 70 Н',
+          answer: 'F = 70 Н',
+        ),
+        FormulaExample(
+          problem: 'Найти массу, если сила тяжести 150 Н',
+          given: 'F = 150 Н, g = 10 м/с²',
+          solution: 'm = F / g = 150 / 10 = 15 кг',
+          answer: 'm = 15 кг',
+        ),
+        FormulaExample(
+          problem: 'Найти вес человека массой 60 кг',
+          given: 'm = 60 кг, g = 10 м/с²',
+          solution: 'P = 60 · 10 = 600 Н',
+          answer: 'P = 600 Н',
+        ),
+        FormulaExample(
+          problem: 'Во сколько раз отличается сила тяжести на Луне (g = 1.6 м/с²) от Земли?',
+          given: 'g_Луны = 1.6 м/с², g_Земли = 10 м/с²',
+          solution: 'F_Луны / F_Земли = 1.6 / 10 = 0.16\nВ 6.25 раз меньше',
+          answer: 'В 6.25 раз меньше',
+        ),
+      ],
+    ),
+    
+    // Импульс
+    Formula(
+      id: 'p6',
+      title: 'Импульс',
+      latex: r'p = mv',
+      description: 'Импульс тела равен произведению массы на скорость',
+      category: FormulaCategory.physics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти импульс тела массой 4 кг, движущегося со скоростью 5 м/с',
+          given: 'm = 4 кг, v = 5 м/с',
+          solution: 'p = 4 · 5 = 20 кг·м/с',
+          answer: 'p = 20 кг·м/с',
+        ),
+        FormulaExample(
+          problem: 'Найти скорость тела массой 2 кг с импульсом 10 кг·м/с',
+          given: 'm = 2 кг, p = 10 кг·м/с',
+          solution: 'v = p / m = 10 / 2 = 5 м/с',
+          answer: 'v = 5 м/с',
+        ),
+        FormulaExample(
+          problem: 'Найти изменение импульса тела массой 5 кг, если скорость изменилась с 10 м/с до 2 м/с',
+          given: 'm = 5 кг, v₁ = 10 м/с, v₂ = 2 м/с',
+          solution: 'Δp = m(v₂ - v₁) = 5(2 - 10) = -40 кг·м/с',
+          answer: 'Δp = -40 кг·м/с',
+        ),
+      ],
+    ),
+    
+    // Кинетическая энергия
+    Formula(
+      id: 'p7',
+      title: 'Кинетическая энергия',
+      latex: r'E_k = \frac{mv^2}{2}',
+      description: 'Кинетическая энергия тела массой m, движущегося со скоростью v',
+      category: FormulaCategory.physics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти кинетическую энергию тела массой 4 кг со скоростью 5 м/с',
+          given: 'm = 4 кг, v = 5 м/с',
+          solution: 'Eₖ = (4 · 25)/2 = 50 Дж',
+          answer: 'Eₖ = 50 Дж',
+        ),
+        FormulaExample(
+          problem: 'Найти скорость тела массой 2 кг с энергией 18 Дж',
+          given: 'm = 2 кг, Eₖ = 18 Дж',
+          solution: '18 = (2 · v²)/2\nv² = 18\nv ≈ 4.24 м/с',
+          answer: 'v ≈ 4.24 м/с',
+        ),
+        FormulaExample(
+          problem: 'Во сколько раз увеличится энергия, если скорость увеличить в 3 раза?',
+          given: 'v₂ = 3v₁',
+          solution: 'Eₖ\' = m(3v)²/2 = 9mv²/2 = 9Eₖ',
+          answer: 'В 9 раз',
+        ),
+        FormulaExample(
+          problem: 'Найти массу тела с энергией 100 Дж при скорости 10 м/с',
+          given: 'Eₖ = 100 Дж, v = 10 м/с',
+          solution: '100 = (m · 100)/2\nm = 2 кг',
+          answer: 'm = 2 кг',
+        ),
+      ],
+    ),
+    
+    // Потенциальная энергия
+    Formula(
+      id: 'p8',
+      title: 'Потенциальная энергия',
+      latex: r'E_p = mgh',
+      description: 'Потенциальная энергия тела на высоте h',
+      category: FormulaCategory.physics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти потенциальную энергию тела массой 3 кг на высоте 5 м',
+          given: 'm = 3 кг, g = 10 м/с², h = 5 м',
+          solution: 'Eₚ = 3 · 10 · 5 = 150 Дж',
+          answer: 'Eₚ = 150 Дж',
+        ),
+        FormulaExample(
+          problem: 'Найти высоту, если Eₚ = 200 Дж и m = 4 кг',
+          given: 'Eₚ = 200 Дж, m = 4 кг, g = 10 м/с²',
+          solution: 'h = Eₚ / (mg) = 200 / (4 · 10) = 5 м',
+          answer: 'h = 5 м',
+        ),
+        FormulaExample(
+          problem: 'Найти массу, если Eₚ = 300 Дж на высоте 6 м',
+          given: 'Eₚ = 300 Дж, h = 6 м, g = 10 м/с²',
+          solution: 'm = Eₚ / (gh) = 300 / (10 · 6) = 5 кг',
+          answer: 'm = 5 кг',
+        ),
+      ],
+    ),
+    
+    // Механическая работа
+    Formula(
+      id: 'p9',
+      title: 'Механическая работа',
+      latex: r'A = F \cdot s \cdot \cos\alpha',
+      description: 'Работа силы F на пути s под углом α',
+      category: FormulaCategory.physics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти работу силы 20 Н на пути 5 м',
+          given: 'F = 20 Н, s = 5 м, α = 0°',
+          solution: 'A = 20 · 5 · 1 = 100 Дж',
+          answer: 'A = 100 Дж',
+        ),
+        FormulaExample(
+          problem: 'Найти работу подъёма груза массой 10 кг на высоту 3 м',
+          given: 'm = 10 кг, h = 3 м, g = 10 м/с²',
+          solution: 'A = mgh = 10 · 10 · 3 = 300 Дж',
+          answer: 'A = 300 Дж',
+        ),
+        FormulaExample(
+          problem: 'Найти силу, если работа 240 Дж на пути 12 м',
+          given: 'A = 240 Дж, s = 12 м',
+          solution: 'F = A / s = 240 / 12 = 20 Н',
+          answer: 'F = 20 Н',
+        ),
+        FormulaExample(
+          problem: 'Найти работу, если сила 50 Н направлена под углом 60° к перемещению 4 м',
+          given: 'F = 50 Н, s = 4 м, α = 60°',
+          solution: 'A = 50 · 4 · cos 60° = 50 · 4 · 0.5 = 100 Дж',
+          answer: 'A = 100 Дж',
+        ),
+      ],
+    ),
+    
+    // Мощность
+    Formula(
+      id: 'p10',
+      title: 'Мощность',
+      latex: r'P = \frac{A}{t} = Fv',
+      description: 'Мощность равна работе, делённой на время, или произведению силы на скорость',
+      category: FormulaCategory.physics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти мощность, если работа 600 Дж выполнена за 2 с',
+          given: 'A = 600 Дж, t = 2 с',
+          solution: 'P = 600 / 2 = 300 Вт',
+          answer: 'P = 300 Вт',
+        ),
+        FormulaExample(
+          problem: 'Найти работу, если мощность 500 Вт в течение 10 с',
+          given: 'P = 500 Вт, t = 10 с',
+          solution: 'A = P · t = 500 · 10 = 5000 Дж = 5 кДж',
+          answer: 'A = 5 кДж',
+        ),
+        FormulaExample(
+          problem: 'Найти мощность двигателя автомобиля, развивающего силу тяги 2000 Н при скорости 20 м/с',
+          given: 'F = 2000 Н, v = 20 м/с',
+          solution: 'P = 2000 · 20 = 40000 Вт = 40 кВт',
+          answer: 'P = 40 кВт',
+        ),
+        FormulaExample(
+          problem: 'За какое время двигатель мощностью 2 кВт выполнит работу 10 кДж?',
+          given: 'P = 2 кВт = 2000 Вт, A = 10 кДж = 10000 Дж',
+          solution: 't = A / P = 10000 / 2000 = 5 с',
+          answer: 't = 5 с',
+        ),
+      ],
+    ),
+    
+    // Количество теплоты при нагревании
+    Formula(
+      id: 'p11',
+      title: 'Количество теплоты при нагревании',
+      latex: r'Q = cm\Delta t',
+      description: 'Количество теплоты для нагревания вещества массой m на Δt градусов',
+      category: FormulaCategory.physics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти Q для нагрева 2 кг воды (c = 4200 Дж/(кг·°C)) от 20°C до 100°C',
+          given: 'c = 4200 Дж/(кг·°C), m = 2 кг, Δt = 80°C',
+          solution: 'Q = 4200 · 2 · 80 = 672000 Дж = 672 кДж',
+          answer: 'Q = 672 кДж',
+        ),
+        FormulaExample(
+          problem: 'Найти массу воды, если Q = 84000 Дж и Δt = 10°C',
+          given: 'Q = 84000 Дж, c = 4200 Дж/(кг·°C), Δt = 10°C',
+          solution: 'm = Q / (c · Δt) = 84000 / (4200 · 10) = 2 кг',
+          answer: 'm = 2 кг',
+        ),
+        FormulaExample(
+          problem: 'На сколько градусов нагреется 5 кг алюминия (c = 900 Дж/(кг·°C)), если Q = 45000 Дж?',
+          given: 'Q = 45000 Дж, m = 5 кг, c = 900 Дж/(кг·°C)',
+          solution: 'Δt = Q / (c · m) = 45000 / (900 · 5) = 10°C',
+          answer: 'Δt = 10°C',
+        ),
+      ],
+    ),
+    
+    // Закон Ома
+    Formula(
+      id: 'p12',
+      title: 'Закон Ома',
+      latex: r'I = \frac{U}{R}',
+      description: 'Сила тока равна отношению напряжения к сопротивлению',
+      category: FormulaCategory.physics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти силу тока при напряжении 12 В и сопротивлении 4 Ом',
+          given: 'U = 12 В, R = 4 Ом',
+          solution: 'I = 12 / 4 = 3 А',
+          answer: 'I = 3 А',
+        ),
+        FormulaExample(
+          problem: 'Найти сопротивление, если U = 220 В и I = 2 А',
+          given: 'U = 220 В, I = 2 А',
+          solution: 'R = U / I = 220 / 2 = 110 Ом',
+          answer: 'R = 110 Ом',
+        ),
+        FormulaExample(
+          problem: 'Найти напряжение, если I = 5 А и R = 8 Ом',
+          given: 'I = 5 А, R = 8 Ом',
+          solution: 'U = I · R = 5 · 8 = 40 В',
+          answer: 'U = 40 В',
+        ),
+        FormulaExample(
+          problem: 'Во сколько раз увеличится сила тока, если напряжение увеличить в 3 раза?',
+          given: 'U₂ = 3U₁, R = const',
+          solution: 'I₂ = 3U₁/R = 3I₁\nВ 3 раза',
+          answer: 'В 3 раза',
+        ),
+      ],
+    ),
+    
+    // Последовательное соединение
+    Formula(
+      id: 'p13',
+      title: 'Последовательное соединение',
+      latex: r'R = R_1 + R_2 + ... + R_n',
+      description: 'Общее сопротивление при последовательном соединении',
+      category: FormulaCategory.physics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти общее сопротивление для R₁ = 3 Ом и R₂ = 5 Ом',
+          given: 'R₁ = 3 Ом, R₂ = 5 Ом',
+          solution: 'R = 3 + 5 = 8 Ом',
+          answer: 'R = 8 Ом',
+        ),
+        FormulaExample(
+          problem: 'Найти силу тока в цепи с R₁ = 4 Ом, R₂ = 6 Ом при U = 20 В',
+          given: 'R₁ = 4 Ом, R₂ = 6 Ом, U = 20 В',
+          solution: 'R = 4 + 6 = 10 Ом\nI = 20 / 10 = 2 А',
+          answer: 'I = 2 А',
+        ),
+        FormulaExample(
+          problem: 'Найти R₂, если R = 12 Ом и R₁ = 5 Ом',
+          given: 'R = 12 Ом, R₁ = 5 Ом',
+          solution: 'R₂ = R - R₁ = 12 - 5 = 7 Ом',
+          answer: 'R₂ = 7 Ом',
+        ),
+      ],
+    ),
+    
+    // Параллельное соединение
+    Formula(
+      id: 'p14',
+      title: 'Параллельное соединение',
+      latex: r'\frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2}',
+      description: 'Общее сопротивление при параллельном соединении',
+      category: FormulaCategory.physics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти общее сопротивление для R₁ = 6 Ом и R₂ = 3 Ом',
+          given: 'R₁ = 6 Ом, R₂ = 3 Ом',
+          solution: 'R = (R₁ · R₂)/(R₁ + R₂) = (6 · 3)/(6 + 3)\n= 18/9 = 2 Ом',
+          answer: 'R = 2 Ом',
+        ),
+        FormulaExample(
+          problem: 'Найти общий ток при U = 12 В и R₁ = 4 Ом, R₂ = 6 Ом',
+          given: 'U = 12 В, R₁ = 4 Ом, R₂ = 6 Ом',
+          solution: 'I₁ = 12/4 = 3 А, I₂ = 12/6 = 2 А\nI = 3 + 2 = 5 А',
+          answer: 'I = 5 А',
+        ),
+        FormulaExample(
+          problem: 'Найти R для трёх одинаковых резисторов по 12 Ом',
+          given: 'R₁ = R₂ = R₃ = 12 Ом',
+          solution: '1/R = 1/12 + 1/12 + 1/12 = 3/12\nR = 4 Ом',
+          answer: 'R = 4 Ом',
+        ),
+      ],
+    ),
+    
+    // Мощность электрического тока
+    Formula(
+      id: 'p15',
+      title: 'Мощность электрического тока',
+      latex: r'P = UI = I^2R = \frac{U^2}{R}',
+      description: 'Мощность электрического тока',
+      category: FormulaCategory.physics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти мощность при U = 220 В и I = 2 А',
+          given: 'U = 220 В, I = 2 А',
+          solution: 'P = 220 · 2 = 440 Вт',
+          answer: 'P = 440 Вт',
+        ),
+        FormulaExample(
+          problem: 'Найти мощность лампы с сопротивлением 100 Ом при напряжении 220 В',
+          given: 'R = 100 Ом, U = 220 В',
+          solution: 'P = U² / R = 220² / 100 = 48400 / 100 = 484 Вт',
+          answer: 'P = 484 Вт',
+        ),
+        FormulaExample(
+          problem: 'Найти силу тока, если P = 1200 Вт и U = 240 В',
+          given: 'P = 1200 Вт, U = 240 В',
+          solution: 'I = P / U = 1200 / 240 = 5 А',
+          answer: 'I = 5 А',
+        ),
+      ],
+    ),
+    
+    // Закон Джоуля-Ленца
+    Formula(
+      id: 'p16',
+      title: 'Закон Джоуля-Ленца',
+      latex: r'Q = I^2Rt',
+      description: 'Количество теплоты, выделяющееся в проводнике',
+      category: FormulaCategory.physics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти количество теплоты при I = 5 А, R = 4 Ом, t = 10 с',
+          given: 'I = 5 А, R = 4 Ом, t = 10 с',
+          solution: 'Q = 5² · 4 · 10 = 25 · 40 = 1000 Дж = 1 кДж',
+          answer: 'Q = 1 кДж',
+        ),
+        FormulaExample(
+          problem: 'За какое время выделится 7200 Дж при I = 6 А и R = 10 Ом?',
+          given: 'Q = 7200 Дж, I = 6 А, R = 10 Ом',
+          solution: 't = Q / (I²R) = 7200 / (36 · 10) = 20 с',
+          answer: 't = 20 с',
+        ),
+        FormulaExample(
+          problem: 'Найти сопротивление нагревателя, если за 5 минут при токе 4 А выделяется 240 кДж',
+          given: 'Q = 240 кДж = 240000 Дж, I = 4 А, t = 300 с',
+          solution: 'R = Q / (I²t) = 240000 / (16 · 300) = 50 Ом',
+          answer: 'R = 50 Ом',
+        ),
+      ],
+    ),
+    
+    // Уравнение состояния идеального газа
+    Formula(
+      id: 'p17',
+      title: 'Уравнение состояния идеального газа',
+      latex: r'PV = nRT',
+      description: 'Уравнение Менделеева-Клапейрона, где R = 8.31 Дж/(моль·К)',
+      category: FormulaCategory.physics,
+      examples: [
+        FormulaExample(
+          problem: 'Во сколько раз увеличится давление, если температуру увеличить в 2 раза при постоянном объёме?',
+          given: 'T₂ = 2T₁, V = const',
+          solution: 'P₁/T₁ = P₂/T₂\nP₂ = P₁ · (T₂/T₁) = 2P₁',
+          answer: 'В 2 раза',
+        ),
+        FormulaExample(
+          problem: 'Газ расширяется от 2 л до 6 л при постоянной температуре и начальном давлении 300 кПа. Найти конечное давление',
+          given: 'V₁ = 2 л, V₂ = 6 л, P₁ = 300 кПа, T = const',
+          solution: 'P₁V₁ = P₂V₂\nP₂ = P₁ · V₁/V₂ = 300 · 2/6 = 100 кПа',
+          answer: 'P₂ = 100 кПа',
+        ),
+        FormulaExample(
+          problem: 'Найти температуру, если 1 моль газа занимает 20 л при давлении 100 кПа',
+          given: 'n = 1 моль, V = 20 л = 0.02 м³, P = 100 кПа = 100000 Па',
+          solution: 'T = PV/(nR) = 100000 · 0.02 / (1 · 8.31)\n≈ 241 К',
+          answer: 'T ≈ 241 К',
+        ),
+      ],
+    ),
+    
+    // КПД тепловой машины
+    Formula(
+      id: 'p18',
+      title: 'КПД тепловой машины',
+      latex: r'\eta = \frac{A}{Q_1} = \frac{Q_1 - Q_2}{Q_1}',
+      description: 'Коэффициент полезного действия тепловой машины',
+      category: FormulaCategory.physics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти КПД, если получено 1000 Дж тепла, а совершена работа 300 Дж',
+          given: 'Q₁ = 1000 Дж, A = 300 Дж',
+          solution: 'η = (300 / 1000) · 100% = 30%',
+          answer: 'η = 30%',
+        ),
+        FormulaExample(
+          problem: 'Найти полезную работу, если Q₁ = 5000 Дж и η = 25%',
+          given: 'Q₁ = 5000 Дж, η = 25% = 0.25',
+          solution: 'A = Q₁ · η = 5000 · 0.25 = 1250 Дж',
+          answer: 'A = 1250 Дж',
+        ),
+        FormulaExample(
+          problem: 'Найти Q₂, если Q₁ = 2000 Дж и η = 40%',
+          given: 'Q₁ = 2000 Дж, η = 40% = 0.4',
+          solution: 'A = 2000 · 0.4 = 800 Дж\nQ₂ = Q₁ - A = 2000 - 800 = 1200 Дж',
+          answer: 'Q₂ = 1200 Дж',
+        ),
+      ],
+    ),
+    
+    // Энергия фотона
+    Formula(
+      id: 'p19',
+      title: 'Энергия фотона',
+      latex: r'E = h\nu = \frac{hc}{\lambda}',
+      description: 'Энергия фотона, где h = 6.63·10⁻³⁴ Дж·с - постоянная Планка',
+      category: FormulaCategory.physics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти энергию фотона с частотой 5·10¹⁴ Гц',
+          given: 'ν = 5·10¹⁴ Гц, h = 6.63·10⁻³⁴ Дж·с',
+          solution: 'E = 6.63·10⁻³⁴ · 5·10¹⁴\n= 3.315·10⁻¹⁹ Дж',
+          answer: 'E ≈ 3.32·10⁻¹⁹ Дж',
+        ),
+        FormulaExample(
+          problem: 'Найти длину волны фотона с энергией 4·10⁻¹⁹ Дж',
+          given: 'E = 4·10⁻¹⁹ Дж, c = 3·10⁸ м/с, h = 6.63·10⁻³⁴ Дж·с',
+          solution: 'λ = hc/E = (6.63·10⁻³⁴ · 3·10⁸)/(4·10⁻¹⁹)\n≈ 4.97·10⁻⁷ м = 497 нм',
+          answer: 'λ ≈ 497 нм',
+        ),
+        FormulaExample(
+          problem: 'Найти частоту фотона с длиной волны 600 нм',
+          given: 'λ = 600 нм = 6·10⁻⁷ м, c = 3·10⁸ м/с',
+          solution: 'ν = c/λ = 3·10⁸ / 6·10⁻⁷ = 5·10¹⁴ Гц',
+          answer: 'ν = 5·10¹⁴ Гц',
+        ),
+      ],
+    ),
+    
+    // Уравнение Эйнштейна для фотоэффекта
+    Formula(
+      id: 'p20',
+      title: 'Уравнение Эйнштейна для фотоэффекта',
+      latex: r'h\nu = A + E_k',
+      description: 'Уравнение фотоэффекта, где A - работа выхода',
+      category: FormulaCategory.physics,
+      examples: [
+        FormulaExample(
+          problem: 'Найти кинетическую энергию электрона, если ν = 10¹⁵ Гц и A = 3·10⁻¹⁹ Дж',
+          given: 'ν = 10¹⁵ Гц, A = 3·10⁻¹⁹ Дж, h = 6.63·10⁻³⁴ Дж·с',
+          solution: 'Eₖ = hν - A = 6.63·10⁻³⁴ · 10¹⁵ - 3·10⁻¹⁹\n≈ 3.63·10⁻¹⁹ Дж',
+          answer: 'Eₖ ≈ 3.63·10⁻¹⁹ Дж',
+        ),
+        FormulaExample(
+          problem: 'Найти красную границу фотоэффекта для A = 2·10⁻¹⁹ Дж',
+          given: 'A = 2·10⁻¹⁹ Дж, h = 6.63·10⁻³⁴ Дж·с, c = 3·10⁸ м/с',
+          solution: 'ν_min = A/h = 2·10⁻¹⁹ / 6.63·10⁻³⁴ ≈ 3·10¹⁴ Гц\nλ_max = c/ν_min ≈ 1000 нм',
+          answer: 'λ_max ≈ 1000 нм',
+        ),
+        FormulaExample(
+          problem: 'Найти работу выхода, если при λ = 300 нм Eₖ = 2·10⁻¹⁹ Дж',
+          given: 'λ = 300 нм = 3·10⁻⁷ м, Eₖ = 2·10⁻¹⁹ Дж',
+          solution: 'E_фотона = hc/λ ≈ 6.63·10⁻¹⁹ Дж\nA = E_фотона - Eₖ ≈ 4.63·10⁻¹⁹ Дж',
+          answer: 'A ≈ 4.63·10⁻¹⁹ Дж',
+        ),
+      ],
+    ),
+  ];
+}
